@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no" >
+<head><title>AWS Karuta Ver.20131203</title></head>
+<style type="text/css"><!--
+button {
+	font-size: 300%;
+	font-family: sans-serif;
+	padding: 10px 0;
+	margin: 10px 0;
+	border: 1px solid #DDD;
+	color: #111;
+	background: -moz-linear-gradient(top,#FFF 0%,#EEE);
+	background: -webkit-gradient(linear,left top,left bottom,from(#FFF),to(#EEE));
+}
+div {
+	word-wrap:break-all;
+	font-size: 100%;
+	font-family: sans-serif;
+	background-color: #ffffcc;
+	padding: 20px;
+	border: 1px solid #f0f0f0;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+img {
+	width: 40%;
+	height: 40%;
+}
+#fwd {
+	position:absolute;
+	right:10px;
+}
+//--></style>
+<body onload="init();fwd();">
+<script>
+function $(id){return document.getElementById(id);};
+var mx = 54;
+var ar = new Array();
+var rnd, unq, seq;
+var currentNo;
+function init(){
+	currentNo = 0;
+	seq = 0;
+	for(var i = 0; i < mx; i++){
+		$("f" + i).style.display = "none";
+		$("i" + i).style.display = "none";
+
+		unq = false;
+		while(!unq){
+			rnd = Math.floor(Math.random() * mx);
+			for (var j in ar){
+				unq = (ar[j] == rnd) ? false : true;
+				if(!unq) break;
+			}
+			ar[i] = unq ? rnd : null;
+		}
+	}
+}
+
+function rev(){
+	if(seq == 1) return;
+	$("f" + ar[seq - 1]).style.display = "none";
+	$("i" + ar[seq - 1]).style.display = "none";
+	$("f" + ar[seq - 2]).style.display = "";
+	$("i" + ar[seq - 2]).style.display = "";
+	--seq;
+	--currentNo;
+	dispCurrent();
+}
+
+function fwd(){
+	if(seq == mx) return;
+	$("f" + ar[seq]).style.display = "";
+	$("i" + ar[seq]).style.display = "";
+
+	if (seq != 0) {
+		$("f" + ar[seq - 1]).style.display = "none";
+		$("i" + ar[seq - 1]).style.display = "none";
+	}
+	seq++;
+	currentNo++;
+	dispCurrent();
+}
+
+function dispCurrent() {
+	$("current").innerHTML = currentNo + "/" + mx;
+}
+</script>
+<button id="rev" onclick="rev()"><<戻る</button>
+<button id="fwd" onclick="fwd()">次へ>></button>
+<div id="current"></div>
+
+<div id="f0">クラウド内で規模の変更が可能なコンピュータ処理能力を提供するウェブサービス。管理者アクセスが可能な仮想マシンとして提供される -- Amazon EC2(Elastic Compute Cloud)</div>
+<div id="f1">フルマネージド型の「検索サービス」。高速で拡張性に優れた検索機能をアプリケーションに容易に統合できる -- Amazon CloudSearch</div>
+<div id="f2">EC2およびS3を利用してホストされる Hadoopクラスタフレームワークのサービス。莫大な量のデータ処理を、簡単に、費用対効果が高く、利用することができる -- Amazon Elastic MapReduce(EMR)</div>
+<div id="f3">フルマネージド型の NoSQL データベースサービス。秒間の読み書き性能を「ユニット」という単位で指定でき、必要に応じていつでも変更することができる -- Amazon DynamoDB</div>
+<div id="f4">フルマネージド型のRDBMSサービス。必要に応じてコンピュートリソースやストレージ容量を拡張できる柔軟性や、煩わしい管理作業を軽減する自動バックアップやパッチ当て機能により、利用者はアプリケーションの開発やビジネスに集中できる。MySQL、Oracle Database、SQLServer、PostgreSQLが利用できる -- Amazon RDS(Relational Database Service)</div>
+<div id="f5">アクセス頻度の低いデータや、取り出しに数時間かかっても問題ないデータに合わせて最適化された、低コストのオンラインストレージサービス。API経由のアクセス以外に、Amazon S3と連携することで、Management Console からデータを管理することも可能である -- Amazon Glacier</div>
+<div id="f6">EC2に割り付けて利用する固定IPアドレス。インスタンスに割り当てていれば無料で利用できるが、未割り当てだと時間単位の利用料がかかるので注意が必要 -- Elastic IPs</div>
+<div id="f7">NASAの火星探査機Curiosityの着陸映像をライブ配信する際にも利用された、エッジロケーションのグローバルなネットワークを利用し、静的コンテンツやストリーミングコンテンツを高パフォーマンスに配信をするサービス -- Amazon CloudFront</div>
+<div id="f8">データアクセスをメモリ上にキャッシュすることでアプリケーションのパフォーマンスを向上させる memcached や Redis に準拠しているキャッシュサービス -- Amazon ElastiCache</div>
+<div id="f9">テンプレートを利用することで、AWSのインフラやリソースを集約し、スタックとしてデプロイすることができるサービス -- AWS CloudFormation</div>
+<div id="f10">複数のAmazon EC2インスタンス間で、アプリケーショントラフィックの負荷を自動的に分散するためのサービス -- Amazon Elastic Load Balancer(ELB)</div>
+<div id="f11">AWSインフラ内に、仮想ネットワーク環境として、ユーザが制御可能な閉域網を構築できるサービス -- Amazon VPC(Virtual Private Cloud)</div>
+<div id="f12">ユーザがAWSリソースを管理するためのWebベースの管理コンソール -- AWS Management Console</div>
+<div id="f13">いつでも、ウェブ上のどこからでも容量に関係なくデータを格納・取得できる耐久性に優れたオンライン・ストレージサービス。静的なウェブサイトのホスティングも可能 -- Amazon S3(Simple Storage Service)</div>
+<div id="f14">オンプレミスのIT環境やAmazon EC2とAWSのストレージインフラをシームレスに統合する仕組み。iSCSIで接続可能な仮想ストレージを提供する -- AWS Storage Gateway</div>
+<div id="f15">稼働率100%のサービスレベルアグリーメントが適用されているドメインネームシステム（DNS）サービス -- Amazon Route53</div>
+<div id="f16">ユーザとAWSのネットワークを専用線で接続するためのサービス -- AWS Direct Connect(DX)</div>
+<div id="f17">EC2インスタンスで使用するためのブロックレベルのストレージボリューム。Provisioned IOPSオプションを使えば、必要なI/O性能を指定してディスクを作成できる -- Amazon EBS(Elastic Block Store)</div>
+<div id="f18">転送用のポータブル記憶装置を用いてAWS内外へ、インターネット転送を使わずに大容量データを転送できるサービス -- AWS Import/Export</div>
+<div id="f19">AWSクラウド上で実行されるソフトウェアのためのオンラインストア -- AWS Marketplace</div>
+<div id="f20">gitやIDEを使い、AWSクラウド上に、アプリケーション実行環境を迅速に、簡単にデプロイするためのサービス -- AWS Elastic Beanstalk</div>
+<div id="f21">VPC内のEC2に複数のNICを設定できる機能 -- Elastic Network Interface(ENI)</div>
+<div id="f22">年間10億通を送ると言われているAmazon.comが培ったEメールインフラストラクチャのノウハウを利用することができる、非常に拡張性が高くコスト効率の良い大量Eメール送信サービス -- Amazon SES(Simple Email Service)</div>
+<div id="f23">AWSで一番最初にリリースされたサービスで、コンピュータ間でメッセージを移動する際に、それらを格納するための、信頼性の高い、拡張性のある、キューサービス -- Amazon SQS(Simple Queue Service)</div>
+<div id="f24">AWSクラウドのリソースと、AWS上で実行するアプリケーションをモニタリングできるサービス。利用料金の監視もできる -- Amazon CloudWatch</div>
+<div id="f25">AWSサービスおよびリソースへのアクセスを安全にコントロールするために、ユーザーとグループを作成および管理し、アクセス権を使用して AWSリソースへのアクセスを許可および拒否できる仕組み -- AWS IAM(Identify and Access Management)</div>
+<div id="f26">OSやソフトウェアがインストールされており、実行可能な状態で保存されている仮想マシンのディスクイメージ -- AMI(AmazonMachine Image)</div>
+<div id="f27">HTTP通知やEメール通知、SMS通知やAmazon SQSへの通知ができるサービス。アプリケーションからアプリケーション、人へのメッセージの迅速な配信環境を実現できる -- Amazon SNS(Simple Notification Service)</div>
+<div id="f28">フルマネージド型の拡張性と耐障害性に優れたアプリケーションを構築するためのワークフローサービス。1つのアプリケーションを構成するさまざまな処理ステップを「タスク」として作成することにより、分散アプリケーションの作業を実行することができる　-- Amazon SWF(Simple Workflow Service)</div>
+<div id="f29">可用性と柔軟性に優れたデータストアサービス。AWS Management Consoleには表示されていない -- Amazon SimpleDB</div>
+<div id="f30">フルマネージド型のデータウェアハウスサービス。クラスター構成を用いて、ペタバイト級のデータセットに対して高いクエリ性能を実現する -- Amazon Redshift</div>
+<div id="f31">AWSの各サービス、ならびにオンプレミスのデータソース間を、指定された間隔で、データ処理やデータ移動ができる、データドリブンなオーケストレーションサービス -- AWS Data Pipeline</div>
+<div id="f32">Chefレシピを利用して設定が可能なDevOpsソリューションサービス。各種リソースをレイヤーという論理的なモデルで管理する -- AWS OpsWorks</div>
+<div id="f33">AWSを使用するJavaアプリケーションの開発、デバッグ、デプロイが容易にできるEclipse Java IDEのオープンソースプラグイン -- AWS Toolkit for Eclipse</div>
+<div id="f34">AWSの各種リソースをPowerShellから制御可能とするツール -- AWS Tools for Windows PowerShell</div>
+<div id="f35">AWSの各種リソースをコマンドラインから制御可能とするツール -- AWS CLI(The AWS Command Line Interface)</div>
+<div id="f36">タスクをワーカーに依頼することで、コンピュータだけでは実現不可能な仕事を処理することができるサービス -- Amazon Mechanical Turk</div>
+<div id="f37">高度なスケーラビリティ、使いやすさ、経済性を実現するクラウドの音声・動画変換サービス。音声・動画ファイルをスマートフォン、タブレット、PC などのデバイスで再生可能なバージョンに変換できる。音声のみのストリームを作成するために、ビデオファイルから音声を抜き出すこともできる。 -- Amazon Elastic Transcoder</div>
+<div id="f38">AWSを使用する .NET アプリケーションの開発、デバッグ、デプロイが容易にできるMicrosoft Visual Studio の拡張機能 -- AWS Toolkit for VisualStudio</div>
+<div id="f39">CloudWatch で監視するリソースがしきい値を超えた場合に、処理ノードを自動的に増減することができる仕組み -- Auto Scaling</div>
+<div id="f40">AWSの各種リソースをAndroidプログラムから制御可能とするAPI環境 -- AWS SDK for Android</div>
+<div id="f41">AWSの各種リソースを.NETプログラムから制御可能とするAPI環境 -- AWS SDK for .NET</div>
+<div id="f42">ElastiCache の Auto Discovery にも対応しており、AWSの各種リソースをPHPプログラムから制御可能とするAPI環境 -- AWS SDK for PHP</div>
+<div id="f43">AWSの各種リソースをRubyプログラムから制御可能とするAPI環境 -- AWS SDK for Ruby</div>
+<div id="f44">ネットワークトラフィックの経路を判断する際に使用される、ルートと呼ばれる一連のルールを含む仕組み。VPC の各サブネットを関連付ける必要があり、サブネットのルーティングは、これによりコントロールされる。 -- Route Table</div>
+<div id="f45">AWSの各種リソースをiOSプログラムから制御可能とするAPI環境 -- AWS SDK for iOS</div>
+<div id="f46">AWSの各種リソースをnodeJSプログラムから制御可能とするAPI環境 -- AWS SDK for nodeJS</div>
+<div id="f47">AWSの各種リソースをPythonプログラムから制御可能とするAPI環境 -- AWS SDK for Python</div>
+<div id="f48">AWSの各種リソースをJavaプログラムから制御可能とするAPI環境 -- AWS SDK for Java</div>
+
+<div id="f49">AWSの各種サービスを直接呼び出すような、リッチなブラウザベースのアプリケーションを、サーバサイドの実装なしで作成可能とするJavaScriptのAPI環境 -- AWS SDK for JavaScript</div>
+<div id="f50">AWSマネージメントコンソール、AWS CLI、自身で作成したアプリケーションやサードパーティソフトウェアなどで使用されるAWS APIに対するコールを記録し、指定したS3バケットにログファイルを保存することができる。ログファイルが保存されるたびに、Amazon SNSのトピックに通知を送ることができる。 -- AWS CloudTrail</div>
+<div id="f51">クラウドで実現されるデスクトップコンピューティング。デスクトップ、ノートパソコン、スマートフォン、タブレットその他あらゆるデバイスからアクセス可能で、すべてのデバイスで同期する。ユーザディスク領域は、定期的にS3にバックアップされる。 -- Amazon WorkSpaces</div>
+<div id="f52">クラウド上から3D ゲームや高画質なインタラクティブ・アプリケーションなどのリソース集約型のアプリケーションのストリーミングを可能にする。AWSのコンピューティング、ストレージリソースを活用し、ローカル端末のGPU、CPU、メモリー、物理ストレージの制限により、通常では不可能だったユーザー体験を提供することができる。 -- Amazon AppStream</div>
+<div id="f53">ビッグデータのリアルタイム・ストリームを扱うために設計されたマネージドサービス。大規模でリアルタイムなデータ投入と処理が必要とされる、あらゆる場面で使うことができる。 -- Amazon Kinesis</div>
+
+
+
+<div id="i0"><img src="img/EC2.png" /></div>
+<div id="i1"><img src="img/CloudSearch.png" /></div>
+<div id="i2"><img src="img/EMR.png" /></div>
+<div id="i3"><img src="img/DynamoDB.png" /></div>
+<div id="i4"><img src="img/RDS.png" /></div>
+<div id="i5"><img src="img/Glacier.png" /></div>
+<div id="i6"><img src="img/EIP.png" /></div>
+<div id="i7"><img src="img/CloudFront.png" /></div>
+<div id="i8"><img src="img/ElastiCache.png" /></div>
+<div id="i9"><img src="img/CloudFormation.png" /></div>
+<div id="i10"><img src="img/ELB.png" /></div>
+<div id="i11"><img src="img/VPC.png" /></div>
+<div id="i12"><img src="img/ManagementConsole.png" /></div>
+<div id="i13"><img src="img/S3.png" /></div>
+<div id="i14"><img src="img/StorageGateway.png" /></div>
+<div id="i15"><img src="img/Route53.png" /></div>
+<div id="i16"><img src="img/DirectConnect.png" /></div>
+<div id="i17"><img src="img/EBS.png" /></div>
+<div id="i18"><img src="img/ImportExport.png" /></div>
+<div id="i19"><img src="img/marketplace.png" /></div>
+<div id="i20"><img src="img/Beanstalk.png" /></div>
+<div id="i21"><img src="img/ENI.png" /></div>
+<div id="i22"><img src="img/SES.png" /></div>
+<div id="i23"><img src="img/SQS.png" /></div>
+<div id="i24"><img src="img/CloudWatch.png" /></div>
+<div id="i25"><img src="img/IAM.png" /></div>
+<div id="i26"><img src="img/AMI.png" /></div>
+<div id="i27"><img src="img/SNS.png" /></div>
+<div id="i28"><img src="img/SWF.png" /></div>
+<div id="i29"><img src="img/SimpleDB.png" /></div>
+<div id="i30"><img src="img/Redshift.png" /></div>
+<div id="i31"><img src="img/DataPipeline.png" /></div>
+<div id="i32"><img src="img/OpsWorks.png" /></div>
+<div id="i33"><img src="img/Eclipse.png" /></div>
+<div id="i34"><img src="img/PowerShell.png" /></div>
+<div id="i35"><img src="img/CLI.png" /></div>
+<div id="i36"><img src="img/MechanicalTurk.png" /></div>
+<div id="i37"><img src="img/Transcoder.png" /></div>
+<div id="i38"><img src="img/VisualStudio.png" /></div>
+<div id="i39"><img src="img/AutoScaling.png" /></div>
+<div id="i40"><img src="img/Android.png" /></div>
+<div id="i41"><img src="img/dotNET.png" /></div>
+<div id="i42"><img src="img/PHP.png" /></div>
+<div id="i43"><img src="img/Ruby.png" /></div>
+<div id="i44"><img src="img/RouteTable.png" /></div>
+<div id="i45"><img src="img/iOS.png" /></div>
+<div id="i46"><img src="img/nodeJS.png" /></div>
+<div id="i47"><img src="img/Python.png" /></div>
+<div id="i48"><img src="img/Java.png" /></div>
+
+<div id="i49"><img src="img/JavaScript.png" /></div>
+<div id="i50"><img src="img/CloudTrail.png" /></div>
+<div id="i51"><img src="img/WorkSpaces.png" /></div>
+<div id="i52"><img src="img/AppStream.png" /></div>
+<div id="i53"><img src="img/Kinesis.png" /></div>
+
+<!--
+-->
+</body></html>
