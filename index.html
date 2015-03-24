@@ -36,7 +36,7 @@ img {
 <body onload="init();fwd();">
 <script>
 function $(id){return document.getElementById(id);};
-var mx = 64;
+var mx = 63;
 var ar = new Array();
 var rnd, unq, seq;
 var currentNo;
@@ -99,7 +99,7 @@ function dispCurrent() {
 <div id="f4">フルマネージド型のRDBMSサービス。必要に応じてコンピュートリソースやストレージ容量を拡張できる柔軟性や、煩わしい管理作業を軽減する自動バックアップやパッチ当て機能により、利用者はアプリケーションの開発やビジネスに集中できる。MySQL、Oracle Database、SQLServer、PostgreSQLが利用できる -- Amazon RDS(Relational Database Service)</div>
 <div id="f5">アクセス頻度の低いデータや、取り出しに数時間かかっても問題ないデータに合わせて最適化された、低コストのオンラインストレージサービス。API経由のアクセス以外に、Amazon S3と連携することで、Management Console からデータを管理することも可能である -- Amazon Glacier</div>
 <div id="f6">EC2に割り付けて利用する固定IPアドレス。インスタンスに割り当てていれば無料で利用できるが、未割り当てだと時間単位の利用料がかかるので注意が必要 -- Elastic IPs</div>
-<div id="f7">NASAの火星探査機Curiosityの着陸映像をライブ配信する際にも利用された、エッジロケーションのグローバルなネットワークを利用し、静的コンテンツやストリーミングコンテンツを高パフォーマンスに配信をするサービス -- Amazon CloudFront</div>
+<div id="f7">エッジロケーションのグローバルなネットワークを利用し、静的コンテンツやストリーミングコンテンツを高パフォーマンスに配信をするサービス -- Amazon CloudFront</div>
 <div id="f8">データアクセスをメモリ上にキャッシュすることでアプリケーションのパフォーマンスを向上させる memcached や Redis に準拠しているキャッシュサービス -- Amazon ElastiCache</div>
 <div id="f9">テンプレートを利用することで、AWSのインフラやリソースを集約し、スタックとしてデプロイすることができるサービス -- AWS CloudFormation</div>
 <div id="f10">複数のAmazon EC2インスタンス間で、アプリケーショントラフィックの負荷を自動的に分散するためのサービス -- Amazon Elastic Load Balancer(ELB)</div>
@@ -143,21 +143,20 @@ function dispCurrent() {
 <div id="f48">AWSの各種リソースをJavaプログラムから制御可能とするAPI環境 -- AWS SDK for Java</div>
 
 <div id="f49">AWSの各種サービスを直接呼び出すような、リッチなブラウザベースのアプリケーションを、サーバサイドの実装なしで作成可能とするJavaScriptのAPI環境 -- AWS SDK for JavaScript</div>
-<div id="f50">AWSマネージメントコンソール、AWS CLI、自身で作成したアプリケーションやサードパーティソフトウェアなどで使用されるAWS APIに対するコールを記録し、指定したS3バケットにログファイルを保存することができる。ログファイルが保存されるたびに、Amazon SNSのトピックに通知を送ることができる。 -- AWS CloudTrail</div>
-<div id="f51">クラウドで実現されるデスクトップコンピューティング。デスクトップ、ノートパソコン、スマートフォン、タブレットその他あらゆるデバイスからアクセス可能で、すべてのデバイスで同期する。ユーザディスク領域は、定期的にS3にバックアップされる。 -- Amazon WorkSpaces</div>
-<div id="f52">クラウド上から3D ゲームや高画質なインタラクティブ・アプリケーションなどのリソース集約型のアプリケーションのストリーミングを可能にする。AWSのコンピューティング、ストレージリソースを活用し、ローカル端末のGPU、CPU、メモリー、物理ストレージの制限により、通常では不可能だったユーザー体験を提供することができる。 -- Amazon AppStream</div>
+<div id="f50">AWS APIに対するコールを記録し、指定したS3バケットにログファイルを保存することができる機能。ログファイルが保存されるたびに、Amazon SNSのトピックに通知を送ることができる。 -- AWS CloudTrail</div>
+<div id="f51">クラウドで実現されるデスクトップコンピューティング。PC、スマートフォン、タブレットなどあらゆるデバイスからアクセス可能で、すべてのデバイスで同期する。ユーザディスク領域は、定期的にS3にバックアップされる。 -- Amazon WorkSpaces</div>
+<div id="f52">クラウド上から高品質でリッチな画像を使ったアプリケーションのストリーミングを可能にする。 -- Amazon AppStream</div>
 <div id="f53">ビッグデータのリアルタイム・ストリームを扱うために設計されたマネージドサービス。大規模でリアルタイムなデータ投入と処理が必要とされる、あらゆる場面で使うことができる。 -- Amazon Kinesis</div>
 
-<div id="f54">アプリケーションの複雑なアップデート処理、デプロイ中のダウンタイムの回避、新規機能の迅速なリリースを容易に行なうことを可能とするEC2インスタンスへのコードのデプロイメントを自動化するサービスです。エラーを起こしやすい手動操作やインフラストラクチャのサービススケールの必要性を排除しながら、デプロイの自動化を行うことが可能となり、1 つの EC2 インスタンスへのデプロイや、数千へのデプロイも容易に行うことができる -- AWS CodeDeploy</div>
-<div id="f55">ユーザー認証機能だけでなく、データ同期に関する機能を提供するシンプルなサービスです。モバイルデバイス間でユーザーのアプリケーションデータを安全に管理また同期するのに役立ちます。バックエンドのロジックを書いたりインフラを管理することなく、あらゆる種類のデータを、AWSクラウドに簡単に保存することが可能です。これにより、アイデンティティの管理やネットワークの状態、ストレージ、同期を処理するバックエンドソリューションの構築や管理について心配せずに、素晴らしいアプリを作ることに集中できます。 -- Amazon Cognito</div>
-<div id="f56">AWSが提供する様々なサービスのコンポーネントの構成情報を管理するサービスです。AWS上にある構成アイテムのリソース変更状況（作成・削除・プロパティ変更）をS3上にログとして記録して、リソースの構成変更履歴を時系列で参照することができ、AWSリソースの履歴管理、構成管理が実現できます。 現在はEC2インスタンスと関連アイテムのリソース状況のみが確認できます。 -- AWS Config</div>
-<div id="f57">データの加工と移動を定期的なスケジュールで処理できるためのワークフローを定義できるマネージド型サービスです。Amazon S3、Amazon RDS、Amazon DynamoDB および Amazon Redshift などの AWS サービスの間だけでなく、オンプレミスのデータベースからも高い信頼性と低いコストでデータを移動、処理するのに役立ちます。 -- AWS Data Pipeline</div>
-<div id="f58">AWS リソースを既存のオンプレミス Microsoft Active Directory で接続したり、AWS クラウド上に新しいスタンドアロンなディレクトリをセットアップしたりできる管理型サービスです。オンプレミスディレクトリへの接続は簡単で、一度確立すると、すべてのユーザーが会社の既存の認証情報で AWS のリソースとアプリケーションにアクセスできるようになります。 -- AWS Directory Service</div>
-<div id="f59">クラウドでアプリケーションをビルドして実行するためにEC2インスタンスを設定したり、起動、監視したりする必要も、OSやプログラミング言語の環境をインストールする必要もない、管理不要のコンピューティングプラットフォームです。S3のバケットにアップロードされたファイルへの変更やAmazon Kinesisのストリームに届いたメッセージ、Amazon DynamoDBにおけるテーブルの更新を受けて、ユーザーが夭死したコードを自動的に実行します。 -- AWS Lambda</div>
-<div id="f60">アプリケーションの使用状況データを簡単かつ費用対効果に優れた方法で収集、分析できるようにするサービスです。Amazon Cognito のアイデンティティプールの設定とAWS Mobile SDKやREST APIによってユーザーのモバイルアプリケーションのDAU、MAU、セッション数、DAUあたりの平均売り上げ、リテンションなどが取れます。カスタムイベントを設定することもできます。収集したデータはマネジメントコンソールから確認だけでなくS3やRedshiftへ自動で出力することができます。 -- Amazon Mobile Analytics</div>
-<div id="f61">ユーザーのAWS 環境を検査し、コスト削減、システムパフォーマンス向上、セキュリティギャップの封鎖につながる推奨事項をお知らせします。コスト最適化、セキュリティ、耐障害性、パフォーマンス改善の4 つのカテゴリに分けてすばやく確認できます。 -- AWS Trusted Advisor</div>
-<div id="f62">エンタープライズのためのフルマネージド型のセキュアな文書保存と共有サービスです。ユーザーは好みのデバイスから、いつでもどこでもクラウド上に保存されているファイルにアクセスし、表示してフィードバックを残すことがでる。既存の Active Directory と統合でき、組織内のどのユーザーにサービスへのアクセスを許可するかを管理することもできる。当初はAmazon Zocaloという名称で発表された。 -- Amazon WorkDocs</div>
-<div id="f63">エンタープライズのためのフルマネージド型のセキュアなメールおよびカレンダーサービスです。既存の Active DirectoryやAWS Directory Serviceでユーザ情報を管理することも可能です。Microsoft Outlook、Webブラウザ、iOS および Android ネイティブの Eメールアプリケーションを使用して、E メール、連絡先、カレンダーにシームレスにアクセスできます。 -- Amazon WorkMail</div>
+<div id="f54">EC2インスタンスへのコードのデプロイメント、アップデートを自動化するサービスで、アプリケーションの複雑なアップデート処理、デプロイ中のダウンタイムの回避、新規機能の迅速なリリースを容易に行なうことを可能とする。 -- AWS CodeDeploy</div>
+<div id="f55">ユーザー認証機能だけでなく、データ同期に関する機能を提供するシンプルなサービスで、モバイルデバイス間でユーザーのアプリケーションデータを安全に管理また同期するのに役立つ。 -- Amazon Cognito</div>
+<div id="f56">AWSが提供する様々なサービスの構成管理、履歴管理を実現するサービス。AWS上にある構成アイテムのリソース変更状況をS3上にログとして記録して、リソースの構成変更履歴を時系列で参照することができる。  -- AWS Config</div>
+<div id="f57">AWS リソースを既存のオンプレミス Microsoft Active Directory で接続したり、AWS クラウド上に新しいスタンドアロンなディレクトリをセットアップしたりできる管理型サービス。 -- AWS Directory Service</div>
+<div id="f58">EC2インスタンスの準備をせずに、クラウド上でアプリケーションをビルドして実行するための、管理不要なコンピューティングプラットフォーム。S3やKinesis、DynamoDBのイベントをトリガーに、ユーザーが用意したコードを自動的に実行する。 -- AWS Lambda</div>
+<div id="f59">アプリケーションの使用状況データを簡単かつ費用対効果に優れた方法で収集、分析できるようにするサービス。収集したデータはマネジメントコンソールから確認だけでなくS3やRedshiftへ自動で出力することができる。モバイルアプリケーションのDAU、MAU、セッション数などだけでなくカスタムイベントも取得することもできる。 -- Amazon Mobile Analytics</div>
+<div id="f60">ユーザーのAWS 環境を検査し、コスト削減、システムパフォーマンス向上、セキュリティギャップの封鎖につながる推奨事項をお知らせします。コスト最適化、セキュリティ、耐障害性、パフォーマンス改善の4 つのカテゴリに分けてすばやく確認できます。 -- AWS Trusted Advisor</div>
+<div id="f61">エンタープライズのためのフルマネージド型のセキュアな文書保存と共有サービス。ユーザーは好みのデバイスから、いつでもどこでもクラウド上に保存されているファイルにアクセスし、表示してフィードバックを残すことがでる。当初はAmazon Zocaloという名称で発表された。 -- Amazon WorkDocs</div>
+<div id="f62">エンタープライズのためのフルマネージド型のセキュアなメールおよびカレンダーサービス。既存の Active DirectoryやAWS Directory Serviceでユーザ情報を管理することも可能。Microsoft Outlook、Webブラウザ、iOS および Android ネイティブの Eメールアプリケーションを使用して、E メール、連絡先、カレンダーにシームレスにアクセスできる。 -- Amazon WorkMail</div>
 
 
 
@@ -220,13 +219,12 @@ function dispCurrent() {
 <div id="i54"><img src="img/CodeDeploy.png" /></div>
 <div id="i55"><img src="img/Cognito.png" /></div>
 <div id="i56"><img src="img/Config.png" /></div>
-<div id="i57"><img src="img/Data Pipeline.png" /></div>
-<div id="i58"><img src="img/Directory Service.png" /></div>
-<div id="i59"><img src="img/Lambda.png" /></div>
-<div id="i60"><img src="img/Mobile Analytics.png" /></div>
-<div id="i61"><img src="img/Trusted Advisor.png" /></div>
-<div id="i62"><img src="img/WorkDocs.png" /></div>
-<div id="i63"><img src="img/WorkMail.png" /></div>
+<div id="i57"><img src="img/Directory Service.png" /></div>
+<div id="i58"><img src="img/Lambda.png" /></div>
+<div id="i59"><img src="img/Mobile Analytics.png" /></div>
+<div id="i60"><img src="img/Trusted Advisor.png" /></div>
+<div id="i61"><img src="img/WorkDocs.png" /></div>
+<div id="i62"><img src="img/WorkMail.png" /></div>
 
 <!--
 -->
