@@ -16,7 +16,8 @@ github上の index.html と img フォルダの内容を適当な Web サーバ�
 ## カルタの作り方
 
 1. Amazonで無地カルタを購入 http://www.amazon.co.jp/dp/B000BFMHLE
-2. Amazonでラベルシートを購入 http://www.amazon.co.jp/dp/B003VSVAOI
-3. デザイン満彩2をダウンロード、インストール http://www.plusprintservice.com/about/software/ 
-4. 各種 pl2 ファイルをデザイン満彩2 でラベルシートに印刷する。
-5. 印刷されたラベルシートを無地カルタに貼りつける。
+1. Amazonでラベルシートを購入 http://www.amazon.co.jp/dp/B003VSVAOI
+1. デザイン満彩2をダウンロード、インストール http://www.plusprintservice.com/about/software/ 
+1. 各種 pl2 ファイルをデザイン満彩2 でラベルシートに印刷する。
+1. 印刷されたラベルシートを無地カルタに貼りつける。
+1. 白黒絵札や名称なし絵札を作る場合は、裏にカラー名称あり絵札を貼るとわかりやすいし、カラーの名称ありの予備にもなります。
