@@ -25,4 +25,5 @@ github上の index.html と img フォルダの内容を適当な Web サーバ�
 ## 読み札の準備
 
 1.github上の index.html と img フォルダの内容を適当な Web サーバに配置してください。
+
 サンプル: https://s3-ap-northeast-1.amazonaws.com/bashi/karuta/index.html
