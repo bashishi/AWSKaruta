@@ -21,3 +21,8 @@ github上の index.html と img フォルダの内容を適当な Web サーバ�
 1. 各種 pl2 ファイルをデザイン満彩2 でラベルシートに印刷する。
 1. 印刷されたラベルシートを無地カルタに貼りつける。
 1. 白黒絵札や名称なし絵札を作る場合は、裏にカラー名称あり絵札を貼るとわかりやすいし、カラーの名称ありの予備にもなります。
+
+## 読み札の準備
+
+1.github上の index.html と img フォルダの内容を適当な Web サーバに配置してください。
+サンプル: https://s3-ap-northeast-1.amazonaws.com/bashi/karuta/index.html
