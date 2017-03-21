@@ -24,6 +24,16 @@ github上の index.html と img フォルダの内容を適当な Web サーバ�
 
 ## 読み札の準備
 
-1. github上の index.html と img フォルダの内容を適当な Web サーバに配置してください。
+~~1. github上の index.html と img フォルダの内容を適当な Web サーバに配置してください。~~
 
-サンプル: https://s3-ap-northeast-1.amazonaws.com/bashi/karuta/index.html
+~~サンプル: https://s3-ap-northeast-1.amazonaws.com/bashi/karuta/index.html~~
+
+本リポジトリ上のファイルは古いバージョンになっています。
+以下からファイルをダウンロードをしてご利用ください。 
+バージョンは2017/03/11です。ラベルはデザイン満彩3形式だそうです。
+読み札： http://awskaruta20170311.s3-website-ap-northeast-1.amazonaws.com/index.html
+ラベル： https://s3-ap-northeast-1.amazonaws.com/aws-karuta-20160312/label_20170312.zip
+
+
+
+
